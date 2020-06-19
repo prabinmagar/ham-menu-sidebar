@@ -1,0 +1,278 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;700;900&display=swap');
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Raleway', sans-serif;
+}
+
+img{
+    width: 100%;
+}
+
+ul{
+    list-style: none;
+}
+
+a{
+    color: #000;
+    text-decoration: none;
+}
+
+/*************************/
+
+.header{
+    background: linear-gradient(rgba(255, 255, 255, 0.2), rgba(0, 0, 0, 0.9)), url("images/banner-img.jpg") center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.top-section{
+    width: 100%;
+    margin: 0 auto;
+}
+
+.logo-and-nav-icon{
+    z-index: 1;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    padding: 30px;
+    background: #fff;
+}
+
+.bar1, .bar2, .bar3{
+    height: 3px;
+    width: 25px;
+    background: #000;
+    margin: 5px 0;
+    transition: transform 0.6s ease, opacity 0.3s ease;
+}
+
+.nav-icon{
+    height: 29px;
+}
+
+/********************/
+
+.nav-icon:hover{
+    cursor: pointer;
+}
+
+
+/******** js related *****/
+
+.changeIcon .bar1{
+    transform: translateY(8px) rotate(45deg);
+}
+
+.changeIcon .bar2{
+    opacity: 0;
+}
+
+.changeIcon .bar3{
+    transform: translateY(-8px) rotate(-45deg);
+}
+
+/************************/
+
+nav{
+    transform: translateY(-176px);
+    overflow: hidden;
+    padding-left: 30px;
+    background: #fff;
+    transition: transform 1s ease;
+}
+
+/************* js related ****/
+
+.showNav{
+    transform: translateY(0);
+}
+
+/***********************/
+
+nav ul li{
+    display: block;
+    padding: 0.5rem 0;
+}
+
+nav ul li a{
+    color: #979899;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+nav ul li a:hover{
+    opacity: 0.7;
+}
+
+
+/***** banner ********/
+
+.bottom-section{
+    height: calc(100vh - 89px);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    color: #fff;
+    padding: 0 30px 30px 30px;
+}
+
+.bottom-section h2{
+    font-size: 2.4rem;
+    opacity: 0.9;
+    padding: 20px 0;
+}
+
+.bottom-section p{
+    line-height: 1.6;
+    padding: 5px 0;
+}
+
+.bottom-section button{
+    margin: 15px 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    font-family: 'Raleway', sans-serif;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s ease;
+}
+
+.bottom-section button:hover{
+    background: transparent;
+    color: #fff;
+    text-decoration: underline;
+}
+
+.posts{
+    width: 90%;
+    margin: 0 auto;
+}
+
+.posts article{
+    margin: 15px 0;
+    line-height: 1.5;
+}
+
+.text-container span{
+    font-size: 0.9rem;
+    color: #ff674d;
+    display: block;
+    padding-top: 10px;
+}
+
+.text-container h3{
+    font-size: 1.8rem;
+    padding: 7px 0;
+}
+
+.text-container p{
+    font-size: 0.95rem;
+    padding: 10px 0;
+    font-weight: 500;
+    opacity: 0.7;
+}
+
+.img-container{
+    overflow: hidden;
+}
+
+.img-container img{
+    transition: transform 0.6s ease;
+}
+
+.img-container img:hover{
+    transform: scale(1.2);
+}
+
+footer{
+    padding: 30px;
+    background: #000;
+    color: #fff;
+    text-align: center;
+    line-height: 1.6;
+}
+
+footer span{
+    color: #ff674d;
+}
+
+
+/**** media queries ****/
+
+@media(min-width: 900px){
+    main{
+        display: grid;
+        grid-template-columns: 300px 1fr;
+    }
+
+    .logo-and-nav-icon{
+        background: #f8f8f8;
+    }
+
+    .bottom-section{
+        display: none;
+    }
+
+    .nav-icon{
+        display: none;
+    }
+
+    .header{
+        background: #000;
+        height: 100%;
+    }
+
+    .top-sectino{
+        position: sticky;
+        top: 0;
+    }
+
+    nav{
+        padding-top: 15px;
+        background: #000;
+        transform: translateY(0);
+    }
+}
+
+@media(min-width: 1170px){
+    .posts{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-column-gap: 30px;
+    }
+}
+
+@media(max-width: 320px){
+    .bottom-section h2{
+        font-size: 1.5rem;
+    }
+
+    .bottom-section p{
+        font-size: 0.9rem;
+    }
+
+    .bottom-section button{
+        font-size: 0.9rem;
+    }
+
+    .text-container h3{
+        font-size: 1.3rem;
+    }
+
+    .text-container p{
+        font-size: 0.85rem;
+    }
+
+    footer p{
+        font-size: 0.9rem;
+    }
+}
